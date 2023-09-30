@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Code } from '../../domain/code';
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'basic-doc',
@@ -11,6 +12,13 @@ import { Code } from '../../domain/code';
         <div class="card flex justify-content-center">
             <p-menu [model]="items"></p-menu>
         </div>
+        <div class="card flex justify-content-center">
+            <p-menu [model]="customIconItems">
+                <ng-template pTemplate="icon" let-icon>
+                    <fa-icon style="margin-right: 6px" [icon]="icon"></fa-icon>
+                </ng-template>
+            </p-menu>
+        </div>
         <app-code [code]="code" selector="menu-basic-demo"></app-code>
     </section>`
 })
@@ -20,6 +28,7 @@ export class BasicDoc implements OnInit {
     @Input() title: string;
 
     items: MenuItem[] | undefined;
+    customIconItems: any[];
 
     ngOnInit() {
         this.items = [
@@ -30,6 +39,17 @@ export class BasicDoc implements OnInit {
             {
                 label: 'Delete',
                 icon: 'pi pi-fw pi-trash'
+            }
+        ];
+
+        this.customIconItems = [
+            {
+                label: 'New',
+                icon: faPlus
+            },
+            {
+                label: 'Delete',
+                icon: faTrash
             }
         ];
     }

@@ -12,9 +12,10 @@ import { MegaMenuModule } from 'primeng/megamenu';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { AccessibilityDoc } from './accessibilitydoc';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-    imports: [CommonModule, AppCodeModule, RouterModule, MegaMenuModule, InputTextModule, ButtonModule, AppDocModule],
+    imports: [CommonModule, AppCodeModule, RouterModule, MegaMenuModule, InputTextModule, ButtonModule, AppDocModule, FontAwesomeModule],
     declarations: [BasicDoc, ImportDoc, StyleDoc, TemplateDoc, VerticalDoc, AccessibilityDoc],
     exports: [AppDocModule]
 })

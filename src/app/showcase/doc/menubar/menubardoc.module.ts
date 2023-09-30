@@ -10,9 +10,10 @@ import { ImportDoc } from './importdoc';
 import { StyleDoc } from './styledoc';
 import { InputTextModule } from 'primeng/inputtext';
 import { AccessibilityDoc } from './accessibilitydoc';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-    imports: [CommonModule, AppCodeModule, RouterModule, MenubarModule, InputTextModule, AppDocModule],
+    imports: [CommonModule, AppCodeModule, RouterModule, MenubarModule, InputTextModule, AppDocModule, FontAwesomeModule],
     declarations: [BasicDoc, ImportDoc, StyleDoc, TemplateDoc, AccessibilityDoc],
     exports: [AppDocModule]
 })

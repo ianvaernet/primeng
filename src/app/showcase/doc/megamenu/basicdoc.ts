@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MegaMenuItem } from 'primeng/api';
 import { Code } from '../../domain/code';
+import { faVideo, faUsers, faCalendar, faGear } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'basic-doc',
@@ -11,6 +12,13 @@ import { Code } from '../../domain/code';
         <div class="card">
             <p-megaMenu [model]="items"></p-megaMenu>
         </div>
+        <div class="card">
+            <p-megaMenu [model]="customIconItems">
+                <ng-template pTemplate="icon" let-icon>
+                    <fa-icon style="margin-right: 6px" [icon]="icon"></fa-icon>
+                </ng-template>
+            </p-megaMenu>
+        </div>
         <app-code [code]="code" selector="mega-menu-basic-demo"></app-code>
     </section>`
 })
@@ -20,6 +28,7 @@ export class BasicDoc implements OnInit {
     @Input() title: string;
 
     items: MegaMenuItem[] | undefined;
+    customIconItems: any[];
 
     ngOnInit() {
         this.items = [
@@ -114,6 +123,123 @@ export class BasicDoc implements OnInit {
             {
                 label: 'Settings',
                 icon: 'pi pi-fw pi-cog',
+                items: [
+                    [
+                        {
+                            label: 'Setting 1',
+                            items: [{ label: 'Setting 1.1' }, { label: 'Setting 1.2' }]
+                        },
+                        {
+                            label: 'Setting 2',
+                            items: [{ label: 'Setting 2.1' }, { label: 'Setting 2.2' }]
+                        },
+                        {
+                            label: 'Setting 3',
+                            items: [{ label: 'Setting 3.1' }, { label: 'Setting 3.2' }]
+                        }
+                    ],
+                    [
+                        {
+                            label: 'Technology 4',
+                            items: [{ label: 'Setting 4.1' }, { label: 'Setting 4.2' }]
+                        }
+                    ]
+                ]
+            }
+        ];
+
+        this.customIconItems = [
+            {
+                label: 'Videos',
+                icon: faVideo,
+                items: [
+                    [
+                        {
+                            label: 'Video 1',
+                            items: [{ label: 'Video 1.1' }, { label: 'Video 1.2' }]
+                        },
+                        {
+                            label: 'Video 2',
+                            items: [{ label: 'Video 2.1' }, { label: 'Video 2.2' }]
+                        }
+                    ],
+                    [
+                        {
+                            label: 'Video 3',
+                            items: [{ label: 'Video 3.1' }, { label: 'Video 3.2' }]
+                        },
+                        {
+                            label: 'Video 4',
+                            items: [{ label: 'Video 4.1' }, { label: 'Video 4.2' }]
+                        }
+                    ]
+                ]
+            },
+            {
+                label: 'Users',
+                icon: faUsers,
+                items: [
+                    [
+                        {
+                            label: 'User 1',
+                            items: [{ label: 'User 1.1' }, { label: 'User 1.2' }]
+                        },
+                        {
+                            label: 'User 2',
+                            items: [{ label: 'User 2.1' }, { label: 'User 2.2' }]
+                        }
+                    ],
+                    [
+                        {
+                            label: 'User 3',
+                            items: [{ label: 'User 3.1' }, { label: 'User 3.2' }]
+                        },
+                        {
+                            label: 'User 4',
+                            items: [{ label: 'User 4.1' }, { label: 'User 4.2' }]
+                        }
+                    ],
+                    [
+                        {
+                            label: 'User 5',
+                            items: [{ label: 'User 5.1' }, { label: 'User 5.2' }]
+                        },
+                        {
+                            label: 'User 6',
+                            items: [{ label: 'User 6.1' }, { label: 'User 6.2' }]
+                        }
+                    ]
+                ]
+            },
+            {
+                label: 'Events',
+                icon: faCalendar,
+                items: [
+                    [
+                        {
+                            label: 'Event 1',
+                            items: [{ label: 'Event 1.1' }, { label: 'Event 1.2' }]
+                        },
+                        {
+                            label: 'Event 2',
+                            items: [{ label: 'Event 2.1' }, { label: 'Event 2.2' }]
+                        }
+                    ],
+                    [
+                        {
+                            label: 'Event 3',
+                            items: [{ label: 'Event 3.1' }, { label: 'Event 3.2' }]
+                        },
+                        {
+                            label: 'Event 4',
+                            items: [{ label: 'Event 4.1' }, { label: 'Event 4.2' }]
+                        }
+                    ]
+                ]
+            },
+            {
+                label: 'Settings',
+                icon: faGear,
                 items: [
                     [
                         {

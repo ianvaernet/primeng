@@ -15,9 +15,10 @@ import { NavigationDoc } from './navigationdoc';
 import { PopupDoc } from './popupdoc';
 import { StyleDoc } from './styledoc';
 import { AccessibilityDoc } from './accessibilitydoc';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-    imports: [CommonModule, AppCodeModule, RouterModule, MenuModule, ToastModule, ButtonModule, AppDocModule],
+    imports: [CommonModule, AppCodeModule, RouterModule, MenuModule, ToastModule, ButtonModule, AppDocModule, FontAwesomeModule],
     declarations: [BasicDoc, CommandDoc, CustomContentDoc, GroupDoc, ImportDoc, NavigationDoc, PopupDoc, StyleDoc, AccessibilityDoc],
     exports: [AppDocModule]
 })
